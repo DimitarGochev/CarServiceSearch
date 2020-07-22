@@ -1,0 +1,16 @@
+<div class="filter">
+
+  <h4>Select your city</h4>
+    <select matNativeControl (change)="selectCar($event)">
+      <option value=""></option>
+      <option *ngFor="let option of cars" [value]="option.value" [selected]="selectedCar === option.value">
+        {{ option.viewValue }}</option>
+    </select>
+</div>
+<div class="content">
+  <mat-card class="service-card" *ngFor="let service of carServices">
+    <span class="info-header">{{service.name}}</span>
+    <span class="info"><span class="label">Address:</span> {{service.address}}</span>
+    <span class="info"><span class="label">Raiting:</span> {{service.raiting}} / 5</span>
+  </mat-card>
+</div>
